@@ -62,15 +62,20 @@ namespace Lab2
             double s = 0.0;
             double e = 1e-4;
             int n = 1;
-            while(true)
+            double st = x; 
+
+            while (true)
             {
-                double a = n*Math.Pow(x,n);
+                double a = n * st;
                 double cur = Math.Sin(a);
+
                 if (Math.Abs(cur) < e)
-                { 
+                {
                     break;
                 }
-                s+= cur;
+
+                s += cur;
+                st *= x; 
                 n++;
             }
             answer = s;
